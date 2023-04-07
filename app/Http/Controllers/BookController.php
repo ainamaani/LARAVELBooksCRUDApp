@@ -36,4 +36,12 @@ class BookController extends Controller
 
         return redirect('/books');
     }
+
+    public function show($id){
+        $singlebook = Book::find($id);
+
+        return view('singlebook',[
+            'singlebook'=>$singlebook
+        ]);
+    }
 }
