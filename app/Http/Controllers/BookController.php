@@ -44,4 +44,12 @@ class BookController extends Controller
             'singlebook'=>$singlebook
         ]);
     }
+
+    public function delete($id){
+        // dd($id);
+        $deleted = Book::find($id);
+        $deleted->delete();
+
+        return redirect('/books');
+    }
 }

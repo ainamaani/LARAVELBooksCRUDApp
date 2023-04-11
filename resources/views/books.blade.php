@@ -2,6 +2,11 @@
 @section ('content')
 
     <h1>All books</h1>
+    @if(session('success'))
+        <div class="alert alert-success" >
+            {{ session('success') }}
+        </div>
+    @endif
     @foreach($books as $book)
     <div>
         <strong>Book Title:</strong>{{ $book->title }}
